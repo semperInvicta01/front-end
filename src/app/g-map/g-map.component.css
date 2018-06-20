@@ -1,0 +1,11 @@
+agm-map {
+    height: 300px;
+    width:90%;
+  }
+
+  agm-marker{
+      height:100px;
+  }
+  .full-width{
+    width:90%;
+  }

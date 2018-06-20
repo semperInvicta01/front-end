@@ -1,0 +1,94 @@
+<div class='text-center'>
+    <mat-toolbar color='primary'><h1>Sub Branch Details</h1></mat-toolbar>
+</div>
+<div class='container'>
+  
+  <br>
+  <form [formGroup]='companyDetailFormSB' (ngSubmit)='onSubmit()' (keydown.enter)="$event.preventDefault()">
+    <div formArrayName='items' *ngFor="let item of companyDetailFormSB.get('items').controls;let i = index;">
+      <div [formGroupName]='i'>
+        <button type='button' class='glyphicon glyphicon-remove' (click)='removeBranch(i)'></button>
+        <!-- put ngSubmit po -->
+   <mat-card [class.mat-elevation-z8]="true" class='row'>
+    <div class=' col-md-6 h'>
+        <div class='row'>
+            <div class='col-md-3'>
+                <h3> Information for Branch {{i+1}}</h3>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <mat-form-field appearance="fill"  class='cp-width'>
+              <mat-label for="branchName">Branch Name</mat-label>
+              <input matInput  formControlName="branchName" placeholder='Your Branch Name here'required>
+           </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="fill"  class='cp-width'>
+            <mat-label for="officeAddress">Office Address</mat-label>
+            <input matInput formControlName="officeAddress" placeholder='Your Office Address here' required>
+          </mat-form-field>
+        </div>
+       <div class="form-group">
+          <input [hidden]='true' [value]='lat' id='lat' formControlName='lat'>
+       </div>
+
+       <div class="form-group">
+         <input [hidden]='true' [value]='lng' id='lng' formControlName='lng'>
+       </div>
+            
+       <div class="checkbox" *ngIf='false'>
+          <label class="center-block">
+            <input type="checkbox" formControlName="Main" ><h4>Is this your Main Branch?</h4>
+          </label>
+       </div>  
+      </div>
+    <div class=' col-md-6 h'>
+        <h3>Contact Person</h3>
+                <hr>
+                <br> 
+                    <div class="form-group" >
+                        <mat-form-field appearance="fill"  class='cp-width'>
+                                <mat-label for="fullName">Full Name:</mat-label>
+                                <input matInput type="text" id="fullName"  formControlName='fullName' placeholder='Your Full Name here' required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance='fill' class='cp-width'>
+                            <mat-label for="contactPersonNumber">Contact Number:</mat-label>
+                            <input matInput type="text" id="contactPersonNumber" formControlName='contactPersonNumber' placeholder='Your Contact Number here' required >
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance='fill' class='cp-width'>
+                                <mat-label for="contactPersonEmailAd">Email Address:</mat-label>
+                                <input matInput type="text" id="contactPersonEmailAd" formControlName='contactPersonEmailAd' placeholder='Your Email Address here' required>
+                        </mat-form-field>
+                    </div>
+      </div>
+    </mat-card> 
+      <br>
+      </div>
+    </div>
+         
+         <mat-card [class.mat-elevation-z8]="true">
+            <mat-toolbar color='primary'><h1 detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="10">Company Location/s</h1></mat-toolbar>
+               <br>
+               <div class='well well-lg'>
+                    <ul>
+                            <span *ngFor="let item of companyDetailFormSB.get('items').controls;let i=index;"><button matTooltip="Tooltip:Make sure to set my location before you click me!" type='button' value={{i}} class='btn btn-primary space'  (click)='this.user.storeLocation($event.target.value)'>Get Location for Branch {{i+1}}</button></span>
+                     </ul>
+               </div>
+                
+                 <app-g-map ></app-g-map>
+                 
+         </mat-card>
+         <nav>
+                <button  type='submit' class="button floated top" >Submit</button>
+                <button (click)='routeGuard()' type="button" id='branchAddress' class="cancel floated top" >Cancel</button>
+         </nav>
+         
+  </form>
+</div>
+<mat-card [@aState]='state' class='card' [class.mat-elevation-z10]='true' (click)='toggleState()'><mat-card-title>Hello There!</mat-card-title><mat-card-content>Don't forget to click on the buttons to get the location of their corresponding branches.Click me to disappear.</mat-card-content></mat-card>
+<!-- <p>Form value: {{ companyDetailFormSB.value | json }}</p> -->

@@ -1,0 +1,19 @@
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div class='container'>
+    
+   
+    <div class="form-group" [formGroup]='gmapForm'>
+            <mat-form-field appearance="outline" class='full-width'>
+                    <mat-label>Company Location</mat-label>
+                    <input matInput placeholder="search for location" autocorrect="on" autocapitalize="on" spellcheck="on" type="text" #search formControlName="searchControl" required>
+            </mat-form-field>
+    </div>
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]='lat' [longitude]="lng" [markerDraggable]='true' [openInfoWindow]='true' [markerClickable]='true'></agm-marker>
+    </agm-map>
+
+    
+</div>

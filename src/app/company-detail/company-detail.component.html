@@ -1,0 +1,97 @@
+<!-- <ngx-loading-bar></ngx-loading-bar> -->
+<!-- <div class='text-center row' *ngIf='this.user.isLoading'>
+        <div class='col-md-5'></div>
+        <div class='col-md-1'><mat-spinner></mat-spinner></div>
+</div> -->
+<div class='container'>
+    
+    <br>
+    <form [formGroup]='companyDetailForm' #detailForm = 'ngForm'>
+            <!-- put ngSubmit po -->
+  
+     <mat-card [class.mat-elevation-z8]="true" class='row'>
+        <div class='text-center'>
+            <mat-toolbar color='primary'>Main Branch Details</mat-toolbar>
+        </div>
+       <div class='col-md-6 h'>
+          <div class='row'>
+              <div class='col-md-3'>
+                  <h3> Information</h3>
+              </div>
+          </div>
+          <hr>
+          <div class="form-group">
+                <mat-form-field appearance="outline"  class='full-width'>
+                        <mat-label for="branchName">Branch Name:</mat-label>
+                        <input matInput formControlName="branchName" placeholder='branch name here'required>
+                        <mat-error *ngIf="branchName.invalid || branchName.dirty">Branch Name is required</mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group">
+              <mat-form-field appearance="outline"  class='full-width'>
+                <mat-label for="officeAddress">Office Address:</mat-label>
+                <input matInput formControlName="officeAddress" placeholder='office address here' required>
+                <mat-error *ngIf="officeAddress.invalid || officeAddress.dirty">Office Address is required</mat-error>
+              </mat-form-field>
+          </div>
+         <div class="form-group">
+            <input [hidden]='true' [value]='lat' id='lat' formControlName='lat'>
+         </div>
+
+         <div class="form-group">
+           <input [hidden]='true' [value]='lng' id='lng' formControlName='lng'>
+         </div>
+
+         <div class="checkbox" *ngIf='false' [hidden]='true'>
+            
+              <input type="checkbox" formControlName="Main" ><h4>Is this your Main Branch?</h4>
+            
+         </div>  
+        </div>
+     
+      <div class=' col-md-6 h'>
+          <h3>Contact Person</h3>
+                  <hr>
+                  
+                    <div class="form-group">
+                        <mat-form-field appearance="outline"  class='full-width'>
+                              <mat-label for="fullName">Full Name:</mat-label>
+                              <input matInput id="fullName" placeholder='Full Name here' formControlName='fullName' required>
+                              <mat-error *ngIf="fullName.invalid || fullName.dirty">Full Name is required</mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="form-group">
+                        <mat-form-field appearance="outline"  class='full-width'>
+                              <mat-label for="personContactNumber">Contact Number:</mat-label>
+                              <input matInput  id="personContactNumber" placeholder='Contact Number here' formControlName='contactPersonNumber' required >
+                              <mat-error *ngIf="contactPersonNumber.invalid || contactPersonNumber.dirty " >Contact Number is required</mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="form-group">
+                              <mat-form-field appearance="outline"  class='full-width'>
+                                <mat-label for="contactPersonEmailAd">Email Address:</mat-label>
+                                <input matInput id="contactPersonEmailAd" placeholder='Email address here' formControlName='contactPersonEmailAd' required>
+                                <mat-error *ngIf="contactPersonEmailAd.invalid || contactPersonEmailAd.dirty">Email is required</mat-error>
+                              </mat-form-field>
+                      </div>     
+                
+                          
+       </div>       
+        
+        <hr>
+        <h3>Company Location</h3>
+       
+        <app-g-map></app-g-map>
+        
+        <nav>   
+                       <button type="button"  class="button top floated" (click)='this.validateForm()'>NEXT</button>
+                       <button (click)='routeGuard()'type="button" id='branchAddress' class="cancel top floated">Cancel</button>
+        </nav>  
+    </mat-card>
+        <br>
+       
+    </form>
+</div>
+<div  detect-scroll  [bottomOffset]="0"></div>
+<mat-card [@aState]='state'  class='card'  [class.mat-elevation-z10]='true' (click)='toggleState()'><mat-card-title>What's up!</mat-card-title><mat-card-content>Choose from the list of places below the search field and click! Tap on me to disappear</mat-card-content></mat-card>
+<!-- <p blue>Form value: {{ companyDetailForm.value | json }}</p> -->

@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+.center{
+    position:absolute;
+    margin-left:40%;
+}
+nav{
+    display:inline;
+}
+.green{
+    color:green;
+}
+.space{
+    margin-top:50px;
+}

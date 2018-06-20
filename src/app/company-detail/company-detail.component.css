@@ -1,0 +1,143 @@
+.top{
+    margin-top:20px;
+}
+a{
+    display:inline;
+}
+.inline{
+    display:inline;
+}
+.form-length{
+    width:500px;
+    display: inline;
+}
+agm-map {
+    height: 300px;
+  }
+
+  agm-marker{
+      height:100px;
+  }
+
+  .h{
+    height:400px;
+}
+
+p.speech {
+    position: relative;
+    top:-50px;
+    left:300px;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+    border: 8px solid #666;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+  }
+
+  p.speech:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 100px;
+    border: 25px solid;
+    border-color: #666 transparent transparent #666;
+  }
+
+  p.speech:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 20px;
+    border: 15px solid;
+    border-color: transparent transparent transparent transparent;
+  }
+  .matCardCustom{
+      width:500px;
+      height:100px;
+      
+      
+      background-color: #ff5047;
+      color:white;
+      font-size:25px;
+      line-height:26px;
+      position:absolute;
+      top:-100px;
+      left:50px;
+      
+  }
+  .full-width{
+    width:100%;
+  }
+  .floated {
+    float:left;
+    margin-right:5px;
+ }
+ .card{
+    background-color:#ff5047;
+    color:white;
+    width:300px;
+    top:300px;
+    position:fixed;
+   margin-top:300px;
+}
+
+.button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  .cancel {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .cancel:hover {
+    background-color: #ff0000d7;
+    box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }

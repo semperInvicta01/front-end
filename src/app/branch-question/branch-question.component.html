@@ -1,0 +1,27 @@
+<div class='text-center'>
+  
+  
+  <div class='container'>
+      <mat-card [class.mat-elevation-z8]="true" class='space'> 
+          <mat-toolbar color='primary'>Next Step</mat-toolbar>
+            
+            <h3>Input your number of sub-branches. Enter 0 if none.</h3>
+          <div class='row'>
+            <div class='col-md-3'></div>
+            <div class='col-md-6'>
+            <mat-form-field>
+                <input type='text' matInput  [(ngModel)]="model.numOfBranches" required>
+            </mat-form-field>
+            </div>
+           
+            
+            <div class='col-md-3'></div>
+          </div>
+          <div class='center '><button type='button' class='button top floated' (click)='storeNum()'>NEXT</button>&nbsp;&nbsp;&nbsp;&nbsp;<button (click)='routeGuard()' type="button" id='branchAddress' class="cancel top floated" >Cancel</button></div>
+         
+      </mat-card>
+   </div>
+ 
+ 
+</div>
+<!-- <p>{{model.numOfBranches}}</p> -->

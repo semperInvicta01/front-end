@@ -1,0 +1,66 @@
+<div>
+        <mat-toolbar color='primary'>Welcome Customer!</mat-toolbar>
+        <div class='container' >
+                <div class='row text-center'>
+                </div>
+                <br>
+                <form [formGroup]='companyForm' (ngSubmit)='onSubmit()' #userForm = 'ngForm'>
+                    <div class='row'>
+                        <div class='col-md-3'></div>
+                        <div class='col-md-6'>
+                          <mat-card [class.mat-elevation-z8]="true">
+                                  <div class="text-center">
+                                      <mat-toolbar class='title' color='primary'>Company Registration Form</mat-toolbar>
+                                  </div>
+                                  <div class='row'>
+                                      <div class='col-md-3'>
+                                      </div>
+                                  </div>
+                                  <hr>
+                                  <div class="form-group">
+                                              <mat-form-field appearance="outline" class='w'>
+                                                  <mat-label>Company Name</mat-label>
+                                                  <input  matInput formControlName="companyName" placeholder='Company Name here' required>
+                                                  <mat-error *ngIf="companyName.invalid  || companyName.dirty">User Input is required</mat-error>
+                                              </mat-form-field>
+                                  </div>
+                                  <div class="form-group">
+                                      <mat-form-field appearance="outline" class='w'>
+                                           <mat-label>Company Email</mat-label>
+                                           <input matInput formControlName="companyEmail" placeholder='Company Email here' required>
+                                           <mat-error *ngIf="companyEmail.invalid || companyEmail.dirty">Company Name is required.</mat-error>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="form-group">
+                                                  <mat-form-field appearance="outline" class='w'>
+                                                       <mat-label>Company Username</mat-label>
+                                                       <input matInput formControlName="username" placeholder='Company Username here' required>
+                                                       <mat-error *ngIf="username.invalid || username.dirty ">Company Name is required.</mat-error>
+                                                  </mat-form-field>
+                                  </div>
+                                  <div class="form-group">
+                                    <input [hidden]='true' [value] = 'dS' id='lng' formControlName='dateSubmitted'>
+                                  </div>
+                                  <div class='text-center'>
+                                          <nav>
+                                              <button type='button'  (click)='save()'class="button">NEXT</button>
+                                          </nav>
+                                  </div>
+                               <h3> A few things to note of our service:</h3>
+                                  <div> 
+                                      <p>1. Please prepare any printer that is NOT of type dot matrix.<br>
+                                          2. Add a SERVICE FEE separate from the amount specified in the ticket.
+                                          Service fee will be your income/profit. The ticket price printed on the eTicket will
+                                          be deducted to your load balance.<br>
+                                          3. This is an e-Ticketing service, thus, you will be giving an eTicket to your customers.
+                                      </p>
+                                  </div> 
+                              </mat-card>
+                          </div>
+                      </div>
+                </form>
+          </div>
+          
+          <!-- <p>{{companyForm.value | json}}</p> -->
+          
+</div>
